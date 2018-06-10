@@ -1,7 +1,3 @@
-# React
-this React的学习笔记
-
-
 1.使用 npm init 初始化文件目录 配置相关初始化环境 生成 package.json 文件
 2.在package.json 文件中 安装依赖
       "babel-preset-es2015": "^6.24.1",
@@ -34,18 +30,3 @@ this React的学习笔记
 
   组件一定要使用 export default 才能引用
   并且组件必须是单标签
-
-8.初次接触生命 现在正在接触两个钩子函数 componentWillMount componentMount
-  如果在index 和 body 这两个文件夹中全部使用 这两个钩子函数 
-  执行的顺序如下 ————————
-
-  index-componentWillMount 
-  bodyIndex.js:6 body-componentWillMount
-  bodyIndex.js:9 body-componentDidMount
-  index.js:15 index-componentDidMount
-
-
-- 9 组件的 state 属性
-组建的额state 是关乎自己的状态的一些处理，当你的state进行改变的时候
-那么虚拟dom 就会做出相应的改变，从而 dom就会发生改变 这是react里面
-一个比较自然而然的事情。
