@@ -119,5 +119,8 @@ this.refs.botton.style.color = 'blue'
 
 - 23 使用antd 这个UI库进行开发。
 
+- 24 学习 react-router 的使用  深刻的体会出一件事情 越是想省事情越是容易出问题  真是浪费时间
+ 
+
  
 

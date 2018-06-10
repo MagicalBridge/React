@@ -1,5 +1,4 @@
 import React from 'react' // 引入依赖
-import ReactDOM from 'react-dom' // 引入reactdom依赖
 // 扩展一个组件
 export default class ComponentHeader extends React.Component{
   constructor(){
@@ -23,7 +22,7 @@ export default class ComponentHeader extends React.Component{
     }
     return ( // 返回的jsx语法
       <header className="smallfontSize" >
-        <h1 style={styleHeader} onClick={this.switchStyle.bind(this)}>这是头部</h1>
+        <h1 style={styleHeader}>这是头部</h1>
       </header>
     )
   }
