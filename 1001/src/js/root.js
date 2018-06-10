@@ -10,7 +10,7 @@ export default class Root extends React.Component {
     return (
         <Router history={hashHistory}>
           <Route component={Index} path="/"></Route>
-          <Route component={ComponentList} path="ComponentList"></Route>
+          <Route component={ComponentList} path="list"></Route>
         </Router>
     );
   }

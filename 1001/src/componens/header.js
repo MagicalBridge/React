@@ -1,5 +1,6 @@
 import React from 'react' // 引入依赖
-// 扩展一个组件
+import {Link} from 'react-router';
+ // 扩展一个组件
 export default class ComponentHeader extends React.Component{
   constructor(){
     super();
@@ -23,6 +24,9 @@ export default class ComponentHeader extends React.Component{
     return ( // 返回的jsx语法
       <header className="smallfontSize" >
         <h1 style={styleHeader}>这是头部</h1>
+        <ul>
+          <li><Link to={`/list`}>列表页面</Link></li>
+        </ul>
       </header>
     )
   }
