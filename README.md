@@ -120,6 +120,12 @@ this.refs.botton.style.color = 'blue'
 - 23 使用antd 这个UI库进行开发。
 
 - 24 学习 react-router 的使用  深刻的体会出一件事情 越是想省事情越是容易出问题  真是浪费时间
+
+- 25 遇到一个小的坑
+
+启动的时候 输入命令 
+webpack-dev-server --inline -hot 我自己 多加了一个 src 就会出现问题
+
  
 
  
