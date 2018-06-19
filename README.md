@@ -126,6 +126,9 @@ this.refs.botton.style.color = 'blue'
 启动的时候 输入命令 
 webpack-dev-server --inline -hot 我自己 多加了一个 src 就会出现问题
 
+- 26 使用响应式开发组件进行适配工作的
+ sudo npm i react-responsive --save
+
  
 
  
