@@ -10,3 +10,13 @@
 
   <Route exact path="/" component={Home}/>
   ```
+  + 4、使用 BrowserRouter 这种路由的方式 url的样子是这样的
+  ```js
+    http://192.168.31.146:3000/ about
+  ```
+  + 5、使用 HashRouter 这种路由方式 url的样子是这样的
+  ```js
+    http://192.168.31.146:3000/ #/about
+    http://192.168.31.146:3000/ #/dashboard
+    http://192.168.31.146:3000/ #/
+  ```
