@@ -5,7 +5,8 @@ import {
   Link,
   Switch,
   Route,
-  useParams
+  useParams,
+  useRouteMatch
 } from 'react-router-dom'
 import './App.css';
 
@@ -13,39 +14,82 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h2>Accounts</h2>
+        <h2>我们</h2>
         <ul>
           <li>
-            <Link to="/netflix">Netflix</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/zillow-group">Zillow Group</Link>
-          </li>
-          <li>
-            <Link to="/yahoo">Yahoo</Link>
-          </li>
-          <li>
-            <Link to="/modus-create">Modus Create</Link>
+            <Link to="/topics">Topics</Link>
           </li>
         </ul>
         <br />
         <Switch>
-          <Route path="/:id" children={<Child />} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/topics">
+            <Topics />
+          </Route>
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  // 我们可以使用 useParams 这个钩子函数来访问url的动态参数
-  let { id } = useParams();
+// home 组件
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+    </div>
+  );
+}
+
+function Topic() {
+  // The <Route> that rendered this component has a
+  // path of `/topics/:topicId`. The `:topicId` portion
+  // of the URL indicates a placeholder that we can
+  // get from `useParams()`.
+  let { topicId } = useParams();
 
   return (
     <div>
-      <h3>ID: {id}</h3>
+      <h3>{topicId}</h3>
+    </div>
+  );
+}
+
+// 在Topics 组件中还可以嵌套 link使用 
+function Topics() {
+  // The `path` lets us build <Route> paths that are
+  // relative to the parent route, while the `url` lets
+  // us build relative links.
+  let { path, url } = useRouteMatch();
+
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <Link to={`${url}/rendering`}>Rendering with React</Link>
+        </li>
+        <li>
+          <Link to={`${url}/components`}>Components</Link>
+        </li>
+        <li>
+          <Link to={`${url}/props-v-state`}>Props v. State</Link>
+        </li>
+      </ul>
+
+      <Switch>
+        <Route exact path={path}>
+          <h3>Please select a topic.</h3>
+        </Route>
+        <Route path={`${path}/:topicId`}>
+          <Topic />
+        </Route>
+      </Switch>
     </div>
   );
 }
