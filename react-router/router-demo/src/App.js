@@ -1,59 +1,52 @@
 import React from 'react';
 // import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
-import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import {
+  HashRouter as Router,
+  Link,
+  Switch,
+  Route,
+  useParams
+} from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <h2>Accounts</h2>
         <ul>
           <li>
-            <Link to="/" >Home</Link>
+            <Link to="/netflix">Netflix</Link>
           </li>
           <li>
-            <Link to="/about" >About</Link>
+            <Link to="/zillow-group">Zillow Group</Link>
           </li>
           <li>
-            <Link to="/dashboard" >Dashboard</Link>
+            <Link to="/yahoo">Yahoo</Link>
+          </li>
+          <li>
+            <Link to="/modus-create">Modus Create</Link>
           </li>
         </ul>
         <br />
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
+          <Route path="/:id" children={<Child />} />
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return (
-    <div>
-      Home
-    </div>
-  )
-}
+function Child() {
+  // We can use the `useParams` hook here to access
+  // the dynamic pieces of the URL.
+  // 我们可以使用 useParams 这个钩子函数来访问url的动态参数
+  let { id } = useParams();
 
-function About() {
   return (
     <div>
-      About
+      <h3>ID: {id}</h3>
     </div>
-  )
-}
-
-function Dashboard() {
-  return (
-    <div>
-      Dashboard
-    </div>
-  )
+  );
 }
 export default App;

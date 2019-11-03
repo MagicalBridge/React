@@ -20,3 +20,21 @@
     http://192.168.31.146:3000/ #/dashboard
     http://192.168.31.146:3000/ #/
   ```
+
+### 学习参数占位符的使用 （URL parameters）
+  + 1、用法中的一段英文 使用谷歌翻译了一下
+  Params are placeholders in the URL that begin with a colon, like the `:id` param defined in the route in this example. A similar convention is used for matching dynamic segments in other popular web frameworks like Rails and Express.
+
+  参数是URL中以冒号开头的占位符，例如在此示例中的路由中定义的`：id`参数。 类似的约定用于匹配其他流行的Web框架（如Rails和Express）中的动态段。
+
+  + 2、 useParams 使用useParams 这个参数
+  在这个例子中：`<Switch>` 组件只渲染了一个组件 这个组件 使用 `<Route>` 渲染  接收一个属性 `children` 使用`jsx` 的表达式
+  渲染了 `<Child/>` 这个组件 上面 这个就是我们说的动态组件`<Link/>` 的 `to="/xxx"` 后面的xxx 相当于给 path 传递参数
+  ```js
+  <Switch>
+    <Route path="/:id" children={<Child />} />
+  </Switch>
+  ```
+
+  
+
